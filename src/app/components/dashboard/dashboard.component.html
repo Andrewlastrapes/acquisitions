@@ -1,8 +1,67 @@
 
-<div class="container">
-    <div class="row">
-      <div class="col-3" *ngFor='let c of companies; let i = index'>
-          <app-individual-company [logo]="c.logo" [name]="c.name" [location]="c.location" [employees]= "c.employees" [totalRaised]="c.totalRaised"></app-individual-company>
-      </div>
-  </div>
-</div>
+
+
+
+<ngb-tabset >
+    <ngb-tab>
+        <ng-template ngbTabTitle>Targets</ng-template>
+        <ng-template ngbTabContent>
+            <div class="container">
+                <div class="row">
+                  <div class="col-3" *ngFor='let t of targets; let i = index' (click)="openModal(t)" >
+                      <div *ngIf="t.status ==='target'"><app-individual-company [logo]="t.logo" [name]="t.name" [location]="t.location" [employees]= "t.employees" [totalRaised]="t.totalRaised"></app-individual-company></div>
+                  </div>
+              </div>
+            </div>
+        </ng-template>
+      </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>Researching</ng-template>
+      <ng-template ngbTabContent>
+          <div class="container">
+              <div class="row">
+                <div class="col-3" *ngFor='let t of targets; let i = index' (click)="openModal(t)" >
+                    <div *ngIf="t.status ==='researching'"><app-individual-company [logo]="t.logo" [name]="t.name" [location]="t.location" [employees]= "t.employees" [totalRaised]="t.totalRaised"></app-individual-company></div>
+                </div>
+            </div>
+            </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+        <ng-template ngbTabTitle>Pending Approval</ng-template>
+        <ng-template ngbTabContent>
+            <div class="container">
+                <div class="row">
+                  <div class="col-3" *ngFor='let t of targets; let i = index' (click)="openModal(t)" >
+                      <div *ngIf="t.status ==='pendingApproval'"><app-individual-company [logo]="t.logo" [name]="t.name" [location]="t.location" [employees]= "t.employees" [totalRaised]="t.totalRaised"></app-individual-company></div>
+                  </div>
+              </div>
+              </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+          <ng-template ngbTabTitle>Approved</ng-template>
+          <ng-template ngbTabContent>
+              <div class="container">
+                  <div class="row">
+                    <div class="col-3" *ngFor='let t of targets; let i = index' (click)="openModal(t)" >
+                        <div *ngIf="t.status ==='approved'"><app-individual-company [logo]="t.logo" [name]="t.name" [location]="t.location" [employees]= "t.employees" [totalRaised]="t.totalRaised"></app-individual-company></div>
+                    </div>
+                </div>
+                </div>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab>
+            <ng-template ngbTabTitle>Declined</ng-template>
+            <ng-template ngbTabContent>
+                <div class="container">
+                    <div class="row">
+                      <div class="col-3" *ngFor='let t of targets; let i = index' (click)="openModal(t)" >
+                          <div *ngIf="t.status ==='declined'"><app-individual-company [logo]="t.logo" [name]="t.name" [location]="t.location" [employees]= "t.employees" [totalRaised]="t.totalRaised"></app-individual-company></div>
+                      </div>
+                  </div>
+                  </div>
+            </ng-template>
+          </ngb-tab>
+  </ngb-tabset>
+  

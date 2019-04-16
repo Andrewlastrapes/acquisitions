@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-title">{{name}}</h4>
+    <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Edit the status for <span class="text-primary">{{name}}</span>?</strong></p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" ngbAutofocus class="btn btn-secondary" (click)="activeModal.close(false)">Keep as target</button>
+    <button type="button" ngbAutofocus class="btn btn-primary" (click)="activeModal.close('researching')">Researching</button>
+    <button type="button" ngbAutofocus class="btn btn-info" (click)="activeModal.close('pendingApproval')">Pending Approval</button>
+    <button type="button" ngbAutofocus class="btn btn-success" (click)="activeModal.close('approved')">Approved</button>
+    <button type="button" ngbAutofocus class="btn btn-danger" (click)="activeModal.close('declined')">Declined</button>
+  </div>

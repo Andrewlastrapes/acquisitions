@@ -4,4 +4,5 @@ export class Company {
     totalRaised: number
     employees: string
     location: string
+    status: string
 }

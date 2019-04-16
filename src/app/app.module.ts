@@ -10,13 +10,15 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { IndividualCompanyComponent } from './components/individual-company/individual-company.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    IndividualCompanyComponent
+    IndividualCompanyComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

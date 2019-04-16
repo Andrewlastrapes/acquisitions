@@ -15,7 +15,6 @@ export class IndividualCompanyComponent implements OnInit {
   @Input() logo;
 
   constructor() { 
-    console.log(this.logo)
   }
 
    formatTotalRaised(num) {
