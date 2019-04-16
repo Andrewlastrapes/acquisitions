@@ -17,7 +17,10 @@ export class DashboardComponent implements OnInit {
 
   getCompanies(){
     this.companiesSer.getCompanies()
-    .subscribe(data => this.companies = data
+    .subscribe(data => {
+      this.companies = data
+      console.log(this.companies)
+    }
     )
    
   }

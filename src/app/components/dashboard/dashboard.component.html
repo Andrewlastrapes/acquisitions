@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
       <div class="col-3" *ngFor='let c of companies; let i = index'>
-          <app-individual-company [name]="c.name" [location]="c.location" [employees]= "c.employees" [totalRaised]="c.totalRaised"></app-individual-company>
+          <app-individual-company [logo]="c.logo" [name]="c.name" [location]="c.location" [employees]= "c.employees" [totalRaised]="c.totalRaised"></app-individual-company>
       </div>
   </div>
 </div>

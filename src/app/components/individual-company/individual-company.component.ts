@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { longStackSupport } from 'q';
 
 @Component({
   selector: 'app-individual-company',
@@ -10,16 +11,17 @@ export class IndividualCompanyComponent implements OnInit {
   @Input() name;
   @Input() location;
   @Input() employees;
-  @Input() totalRaised
+  @Input() totalRaised;
+  @Input() logo;
 
-  constructor() { }
+  constructor() { 
+    console.log(this.logo)
+  }
 
    formatTotalRaised(num) {
     return `$${num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}`
   }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
 }
