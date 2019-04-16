@@ -8,12 +8,15 @@ import { CompaniesService } from "./services/companies/companies.service";
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { IndividualCompanyComponent } from './components/individual-company/individual-company.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    IndividualCompanyComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { InMemoryDataService }  from './in-memory-data.service';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    NgbModule
   ],
   providers: [CompaniesService],
   bootstrap: [AppComponent]
