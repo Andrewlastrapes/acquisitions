@@ -63,6 +63,10 @@ export class DashboardComponent implements OnInit {
     console.log("hey")
   }
 
+  onOutputTarget(e){
+    this.targets.unshift(e)
+  }
+
   ngOnInit() {
     this.getCurrentUser()
     this.getCompanies()

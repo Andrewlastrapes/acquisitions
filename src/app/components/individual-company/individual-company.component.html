@@ -1,10 +1,8 @@
 <div class="card bg-light mb-3">
-    <img class="card-img-top" src={{logo}} alt="Card image cap">
+    <img class="card-img-top" src={{logo}} onerror='this.src="../../../assets/logos/companyname.png"' alt="Card image cap">
     <div class="card-body">
-      <!-- <h5 class="card-title">{{name}}</h5> -->
       <p class="card-text">{{location}}</p>
       <p class="card-text">Employees: {{employees}}</p>
       <p class="card-text">Total Raised: {{formatTotalRaised(this.totalRaised)}}</p>
-      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
     </div>
   </div>

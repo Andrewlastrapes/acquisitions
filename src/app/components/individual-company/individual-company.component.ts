@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { longStackSupport } from 'q';
+// import {asdf} from "../../../assets/logos/companyname.png"
 
 @Component({
   selector: 'app-individual-company',

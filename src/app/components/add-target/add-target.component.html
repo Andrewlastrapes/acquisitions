@@ -2,27 +2,25 @@
   <div class="card">
     <h5 class="card-header">Add Target</h5>
     <div class="card-body">
-      <form>
-        <div class="form-group">
+      <div>
           <label for="location">Location</label>
-          <input type="text" class="form-control" id="location" aria-describedby="emailHelp"
+          <input type="text" class="form-control" id="location" [(ngModel)]="location"
             placeholder="Location">
         </div>
-        <div class="form-group">
+        <div>
           <label for="employees">Employees</label>
-          <input type="password" class="form-control" id="employees" placeholder="Employees">
+          <input type="text" class="form-control" [(ngModel)]="employees" id="employees" placeholder="Employees">
           <small class="form-text text-muted">Please estimate if needed.</small>
         </div>
-        <div class="form-group">
+        <div>
             <label for="totalRaised">Total Raised</label>
-            <input type="text" class="form-control" id="totalRaised" placeholder="Total Raised">
+            <input type="text" class="form-control" [(ngModel)]="totalRaised" id="totalRaised" placeholder="Total Raised">
           </div>
-        <div class="form-group">
+        <div>
           <label for="exampleFormControlFile1">Logo</label>
           <input type="text" class="form-control-file" id="logo">
-          <input type="file" class="form-control-file" id="logo">
+          <input type="file" class="form-control-file" [(ngModel)]="logo" id="logo">
         </div>
-        <button type="submit" class="btn btn-primary">Add</button>
-      </form>
+        <button (click)="onSubmit()" class="btn btn-primary">Add</button>
     </div>
   </div>

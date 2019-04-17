@@ -92,7 +92,7 @@
                 <h6><span class="badge badge-primary">Add Target</span></h6>
             </ng-template>
             <ng-template ngbTabContent>
-                <app-add-target></app-add-target>
+                <app-add-target (outputTarget)="onOutputTarget($event)"></app-add-target>
             </ng-template>
         </ngb-tab>
     </div>
