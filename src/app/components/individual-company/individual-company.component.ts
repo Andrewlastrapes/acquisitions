@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import {asdf} from "../../../assets/logos/companyname.png"
+
 
 @Component({
   selector: 'app-individual-company',
@@ -17,7 +17,7 @@ export class IndividualCompanyComponent implements OnInit {
   constructor() { 
   }
 
-   formatTotalRaised(num) {
+   formatTotalRaised(num: Number) {
     return `$${num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}`
   }
 

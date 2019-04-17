@@ -1,15 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CompaniesService } from "../../services/companies/companies.service";
 import { Company } from "../../Company";
-import { catchError, map, tap } from 'rxjs/operators';
-import { Observable } from 'rxjs'
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from "../modal/modal.component";
-import { Status } from "../../Status";
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ActivatedRoute } from '@angular/router';
-import { AddTargetComponent } from "../add-target/add-target.component";
-import { SuccessModalComponent } from "../success-modal/success-modal.component";
 import { ModalService } from "../../services/modal/modal.service";
 
 @Component({
@@ -40,11 +33,11 @@ export class DashboardComponent implements OnInit {
     )
    }
 
-   changeStatus(t, status){
+   changeStatus(t: Company, status: string){
      t['status'] = status
    }
 
-  openModal(t){
+  openModal(t: Company){
     this.modalService.openModal(t, 'optionModal').then(data => {
       if (!data) {
         return;
@@ -59,7 +52,7 @@ export class DashboardComponent implements OnInit {
     this.route.queryParams.subscribe(user => this.currentUser = user["username"])
   }
 
-  onOutputTarget(e){
+  onOutputTarget(e: Company){
     this.targets.unshift(e)
   }
 

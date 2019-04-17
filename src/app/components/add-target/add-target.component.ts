@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ModalService } from "../../services/modal/modal.service";
-
+import { Company } from "../../Company"; 
 
 
 @Component({
@@ -18,9 +18,7 @@ export class AddTargetComponent implements OnInit {
   totalRaised: string;
   submitError: boolean=false;
   errMessage: string;
-
-
-  target = {}
+  target: Company
   @Output() outputTarget: EventEmitter<any> = new EventEmitter
 
   constructor(public modalService: ModalService) { }
@@ -29,10 +27,10 @@ export class AddTargetComponent implements OnInit {
   
     this.target = {
       name: this.name,
-      location: this.location,
-      employees: this.employees,
       logo: this.logo,
-      totalRaised: this.totalRaised,
+      totalRaised: parseInt(this.totalRaised),
+      employees: this.employees,
+      location: this.location,
       status: "target"
     }
 
@@ -46,7 +44,7 @@ export class AddTargetComponent implements OnInit {
     }
     this.submitError = false;
     this.outputTarget.emit(this.target)
-    this.modalService.openModal(this.name, "targetAdded").then(data => console.log(data))
+    this.modalService.openModal(this.target, "targetAdded").then(data => console.log(data))
 
 
   }

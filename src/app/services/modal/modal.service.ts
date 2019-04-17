@@ -3,6 +3,7 @@ import { SuccessModalComponent } from "../../components/success-modal/success-mo
 import { ModalComponent } from "../../components/modal/modal.component";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TargetAddedModalComponent } from "../../components/target-added-modal/target-added-modal.component";
+import { Company } from 'src/app/Company';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ModalService {
 
   constructor(private modalService: NgbModal) { }
 
-  openModal(t, type) {
+  openModal(t: Company, type: string) {
     if (type === "optionModal") {
       const modalRef = this.modalService.open(ModalComponent, { size: 'lg' });
       modalRef.componentInstance.name = t.name;
@@ -24,7 +25,7 @@ export class ModalService {
         return modalRef.result.then(() => modalRef.close)
     } else if(type === "targetAdded"){
       const modalRef = this.modalService.open(TargetAddedModalComponent, {centered: true})
-        modalRef.componentInstance.name = t;
+        modalRef.componentInstance.name = t.name;
         return modalRef.result.then(() => modalRef.close)
     }
   }
