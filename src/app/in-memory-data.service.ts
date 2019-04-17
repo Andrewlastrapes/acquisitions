@@ -128,7 +128,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         name: "Wealthfront",
         logo: "../../assets/logos/wealthfront.png",
-        totalRaised: 4444233234,
+        totalRaised: 444233234,
         employees: "1000-5000",
         location: "San Fransisco, California",
         status: "target"

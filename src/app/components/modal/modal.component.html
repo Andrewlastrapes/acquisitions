@@ -9,8 +9,9 @@
   </div>
   <div class="modal-footer">
     <button type="button" ngbAutofocus class="btn btn-secondary" (click)="activeModal.close(false)">Keep as target</button>
+    <button type="button" ngbAutofocus class="btn btn-danger" (click)="activeModal.close('delete')">Delete target</button>
     <button type="button" ngbAutofocus class="btn btn-primary" (click)="activeModal.close('researching')">Researching</button>
     <button type="button" ngbAutofocus class="btn btn-info" (click)="activeModal.close('pendingApproval')">Pending Approval</button>
     <button type="button" ngbAutofocus class="btn btn-success" (click)="activeModal.close('approved')">Approved</button>
-    <button type="button" ngbAutofocus class="btn btn-danger" (click)="activeModal.close('declined')">Declined</button>
+    <button type="button" ngbAutofocus class="btn btn-warning" (click)="activeModal.close('declined')">Declined</button>
   </div>

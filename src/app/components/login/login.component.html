@@ -1,0 +1,33 @@
+<div class="card text-white bg-info mb-3">
+    <img class="card-img" src="../../../assets/login-image/home.jpg">
+    <div class="card-img-overlay">
+      <div class="display-4 title">Acqusitions</div>
+      <div class="card-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-4">
+              <div>
+                <h2 class="card-title">Login</h2>
+                <div class="forms">
+                  <div class="card-text input-group input-group-lg username">
+                    <input type="text" class="form-control" placeholder="Username" [(ngModel)]="username">
+                  </div>
+                  <div class="card-text input-group input-group-lg password">
+                    <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password">
+                  </div>
+                  <div class="text-center buttonPad">
+                    <button type="button" class="btn btn-primary btn-lg" (click)="loginUser(username, password)">Submit</button>
+                  </div>
+                  <div *ngIf="loginError" class="padTop" class="alert alert-danger" role="alert">
+                    {{errMessage}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
