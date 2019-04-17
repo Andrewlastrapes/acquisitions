@@ -14,6 +14,10 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from "@angular/forms";
 import { AddTargetComponent } from './components/add-target/add-target.component';
+import { SuccessModalComponent } from './components/success-modal/success-modal.component';
+import { ModalService } from "../app/services/modal/modal.service";
+import { TargetAddedModalComponent } from './components/target-added-modal/target-added-modal.component';
+
 
 
 @NgModule({
@@ -23,7 +27,9 @@ import { AddTargetComponent } from './components/add-target/add-target.component
     IndividualCompanyComponent,
     ModalComponent,
     LoginComponent,
-    AddTargetComponent
+    AddTargetComponent,
+    SuccessModalComponent,
+    TargetAddedModalComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,7 @@ import { AddTargetComponent } from './components/add-target/add-target.component
     Ng4LoadingSpinnerModule.forRoot(),
     FormsModule
   ],
-  providers: [CompaniesService],
+  providers: [CompaniesService, ModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

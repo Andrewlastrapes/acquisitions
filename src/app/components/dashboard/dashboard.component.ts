@@ -9,6 +9,8 @@ import { Status } from "../../Status";
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ActivatedRoute } from '@angular/router';
 import { AddTargetComponent } from "../add-target/add-target.component";
+import { SuccessModalComponent } from "../success-modal/success-modal.component";
+import { ModalService } from "../../services/modal/modal.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +24,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private companiesSer: CompaniesService,
-    private modalService: NgbModal,
+    private modalService: ModalService,
     private spinner: Ng4LoadingSpinnerService,
     private route: ActivatedRoute
     ) {
@@ -43,24 +45,18 @@ export class DashboardComponent implements OnInit {
    }
 
   openModal(t){
-    
-    const modalRef = this.modalService.open(ModalComponent, { size: 'lg' })
-    modalRef.componentInstance.name = t.name;
-    modalRef.result.then(data => {
+    this.modalService.openModal(t, 'optionModal').then(data => {
       if (!data) {
         return;
       } else {
         this.changeStatus(t, data)
+        this.modalService.openModal(t, 'successModal')
       }
     })
   }
 
   getCurrentUser(){
     this.route.queryParams.subscribe(user => this.currentUser = user["username"])
-  }
-
-  addTarget(){
-    console.log("hey")
   }
 
   onOutputTarget(e){
