@@ -13,6 +13,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from "@angular/forms";
+import { AddTargetComponent } from './components/add-target/add-target.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule } from "@angular/forms";
     DashboardComponent,
     IndividualCompanyComponent,
     ModalComponent,
-    LoginComponent
+    LoginComponent,
+    AddTargetComponent
   ],
   imports: [
     BrowserModule,

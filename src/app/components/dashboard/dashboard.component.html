@@ -1,13 +1,15 @@
 <nav class="navbar navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Welcome, {{currentUser}}</a>
+    <a class="navbar-brand" href="#">
+        <h3>Welcome, <span class="badge badge-danger">{{currentUser}}</span></h3>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 </nav>
 
+<ngb-tabset justify="justified">
 
-<ngb-tabset>
     <ngb-tab>
         <ng-template ngbTabTitle>Targets</ng-template>
         <ng-template ngbTabContent>
@@ -84,4 +86,14 @@
             </div>
         </ng-template>
     </ngb-tab>
+    <div (click)="addTarget()">
+        <ngb-tab>
+            <ng-template ngbTabTitle>
+                <h6><span class="badge badge-primary">Add Target</span></h6>
+            </ng-template>
+            <ng-template ngbTabContent>
+                <app-add-target></app-add-target>
+            </ng-template>
+        </ngb-tab>
+    </div>
 </ngb-tabset>

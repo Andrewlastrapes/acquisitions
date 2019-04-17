@@ -8,6 +8,7 @@ import { ModalComponent } from "../modal/modal.component";
 import { Status } from "../../Status";
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ActivatedRoute } from '@angular/router';
+import { AddTargetComponent } from "../add-target/add-target.component";
 
 @Component({
   selector: 'app-dashboard',
@@ -31,8 +32,8 @@ export class DashboardComponent implements OnInit {
   getCompanies(){
     this.companiesSer.getCompanies()
     .subscribe(data => {
-      this.spinner.hide()
       this.targets = data
+      this.spinner.hide()
       }
     )
    }
@@ -56,6 +57,10 @@ export class DashboardComponent implements OnInit {
 
   getCurrentUser(){
     this.route.queryParams.subscribe(user => this.currentUser = user["username"])
+  }
+
+  addTarget(){
+    console.log("hey")
   }
 
   ngOnInit() {
