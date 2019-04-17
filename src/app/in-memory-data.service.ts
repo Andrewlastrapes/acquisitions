@@ -19,7 +19,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         name: "Prosper",
         logo: "../../assets/logos/prosper.png",
-        totalRaised: 3547000000,
+        totalRaised: 354700000,
         employees: "200-500",
         location: "San Fransisco, California",
         status: "target"
