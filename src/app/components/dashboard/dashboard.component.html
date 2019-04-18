@@ -16,8 +16,8 @@
             <div class="container">
                 <div class="row">
                     <ng4-loading-spinner [loadingText]="'Please wait...'" [zIndex]="9999"> </ng4-loading-spinner>
-                    <div class="col-md-3" *ngFor='let t of targets; let i = index' (click)="openModal(t)">
-                        <div *ngIf="t.status ==='target'">
+                    <div class="col-md-3" *ngFor='let t of targets; let i = index' (click)="openModal(t, 'targets')">
+                        <div>
                             <app-individual-company [logo]="t.logo" [name]="t.name" [location]="t.location"
                                 [employees]="t.employees" [totalRaised]="t.totalRaised"></app-individual-company>
                         </div>
@@ -31,8 +31,8 @@
         <ng-template ngbTabContent>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3" *ngFor='let t of targets; let i = index' (click)="openModal(t)">
-                        <div *ngIf="t.status ==='researching'">
+                    <div class="col-md-3" *ngFor='let t of researching; let i = index' (click)="openModal(t, 'researching')">
+                        <div>
                             <app-individual-company [logo]="t.logo" [name]="t.name" [location]="t.location"
                                 [employees]="t.employees" [totalRaised]="t.totalRaised"></app-individual-company>
                         </div>
@@ -46,8 +46,8 @@
         <ng-template ngbTabContent>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3" *ngFor='let t of targets; let i = index' (click)="openModal(t)">
-                        <div *ngIf="t.status ==='pendingApproval'">
+                    <div class="col-md-3" *ngFor='let t of pendingApproval; let i = index' (click)="openModal(t, 'pendingApproval')">
+                        <div>
                             <app-individual-company [logo]="t.logo" [name]="t.name" [location]="t.location"
                                 [employees]="t.employees" [totalRaised]="t.totalRaised"></app-individual-company>
                         </div>
@@ -61,8 +61,8 @@
         <ng-template ngbTabContent>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3" *ngFor='let t of targets; let i = index' (click)="openModal(t)">
-                        <div *ngIf="t.status ==='approved'">
+                    <div class="col-md-3" *ngFor='let t of approved; let i = index' (click)="openModal(t, 'approved')">
+                        <div>
                             <app-individual-company [logo]="t.logo" [name]="t.name" [location]="t.location"
                                 [employees]="t.employees" [totalRaised]="t.totalRaised"></app-individual-company>
                         </div>
@@ -76,8 +76,8 @@
         <ng-template ngbTabContent>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3" *ngFor='let t of targets; let i = index' (click)="openModal(t)">
-                        <div *ngIf="t.status ==='declined'">
+                    <div class="col-md-3" *ngFor='let t of declined; let i = index' (click)="openModal(t, 'declined')">
+                        <div>
                             <app-individual-company [logo]="t.logo" [name]="t.name" [location]="t.location"
                                 [employees]="t.employees" [totalRaised]="t.totalRaised"></app-individual-company>
                         </div>
